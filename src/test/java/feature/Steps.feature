@@ -16,7 +16,6 @@
 
   Cenario: Comprando produto
     Quando clico Produtos e Servicos
-    E clico em ver todos na loja e seleciono o produto desejado
-    E preencho os dados
-    Entao valido se o Botao finalizar compra esta habilitado
+    E clico no icone da Aura e pesquiso por lojas
+    Entao valido o endereco de destino
 
