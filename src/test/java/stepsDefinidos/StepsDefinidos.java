@@ -3,14 +3,11 @@ package stepsDefinidos;
 import Screenshot.GerarData;
 import Screenshot.GerarPasta;
 import Screenshot.GerarPrint;
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.junit.Rule;
-import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
@@ -23,14 +20,13 @@ public class StepsDefinidos {
     private GerarPasta gerarPasta = new GerarPasta();
     private GerarData gerarData = new GerarData();
 
-    @Rule
-    public TestName testName = new TestName();
+
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Sempre IT\\IdeaProjects\\br.com.vivo-GrupoVivo\\driver\\chromedriver.exe");
         navegador = new ChromeDriver();
         navegador.manage().window().maximize();
-        navegador.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        navegador.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
@@ -46,11 +42,11 @@ public class StepsDefinidos {
         gerarPasta.criarPasta("fluxo1");
         TelaHomeCombo telaHomeCombo = new TelaHomeCombo(navegador);
         telaHomeCombo.selecionarMonteCombo();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
         TelaHomeCombo telaHomeCombo1 = new TelaHomeCombo(navegador);
         telaHomeCombo1.preencherDadosDisponibilidade();
-        String screenshotArquivo1 = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo1 = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo1);
 
     }
@@ -59,8 +55,9 @@ public class StepsDefinidos {
     public void montoMeuCombo() throws InterruptedException, IOException {
         TelaMonteSeuCombo telaMonteSeuCombo = new TelaMonteSeuCombo(navegador);
         telaMonteSeuCombo.montarCombo();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
+
 
     }
 
@@ -68,7 +65,7 @@ public class StepsDefinidos {
     public void fornecoOsDadosRestantes() throws InterruptedException, IOException {
         TelaDadosRestantes telaDadosRestantes = new TelaDadosRestantes(navegador);
         telaDadosRestantes.preencherDados();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
 
     }
@@ -77,7 +74,7 @@ public class StepsDefinidos {
     public void validoSeBotaoDeFinalizarPedidoEstaClicvel() throws IOException {
         TelaValidaCombo telaValidaCombo = new TelaValidaCombo(navegador);
         telaValidaCombo.validarCombo();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
 
     }
@@ -87,7 +84,7 @@ public class StepsDefinidos {
         gerarPasta.criarPasta("fluxo2");
         TelaProdutosEServicos telaProdutosEServicos = new TelaProdutosEServicos(navegador);
         telaProdutosEServicos.escolherProduto();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
 
     }
@@ -96,11 +93,11 @@ public class StepsDefinidos {
     public void clicoNoIconeDaAuraEPesquisoPorLojas() throws InterruptedException, IOException {
         TelaLoja telaLoja = new TelaLoja(navegador);
         telaLoja.falarAura();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
         TelaLoja telaLoja1 = new TelaLoja(navegador);
         telaLoja1.procurarLoja();
-        String screenshotArquivo1 = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo1 = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo1);
 
     }
@@ -110,7 +107,7 @@ public class StepsDefinidos {
     public void validoOEnderecoDeDestino() throws IOException {
         TelaValidaEndereco telaValidaEndereco = new TelaValidaEndereco(navegador);
         telaValidaEndereco.validarEndereco();
-        String screenshotArquivo = gerarPasta.getPasta() + "//" + gerarData.dataHoraParaArquivo() + testName.getMethodName() + ".png";
+        String screenshotArquivo = gerarPasta.getPasta() + "//" + GerarData.dataHoraParaArquivo() + ".png";
         GerarPrint.take(navegador, screenshotArquivo);
     }
 

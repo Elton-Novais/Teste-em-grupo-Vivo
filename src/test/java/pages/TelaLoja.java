@@ -1,11 +1,9 @@
 package pages;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
+
 
 public class TelaLoja {
     WebDriver navegador;

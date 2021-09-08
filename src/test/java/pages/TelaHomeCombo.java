@@ -10,10 +10,11 @@ public class TelaHomeCombo {
         this.navegador = navegador;
     }
 
-    public void selecionarMonteCombo() {
+    public void selecionarMonteCombo() throws InterruptedException {
         //SELECIONAR COMBO
         navegador.findElement(By.xpath("//*[@class='menu-item-list-2']")).click();
         navegador.findElement(By.xpath("(//*[@class='destaque-banner__item__content'])[13]")).click();
+        Thread.sleep(1000);
     }
 
     public void preencherDadosDisponibilidade() throws InterruptedException {

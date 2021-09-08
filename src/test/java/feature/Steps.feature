@@ -3,7 +3,7 @@
   Funcionalidade: Entrar no site da Vivo e contratar serviços
     Como cliente
     Desejo entrar no site da vivo
-    Montar meu pacote de dados e contratar serviços de celular
+    Montar meu pacote de dados e consultar endereço de loja
 
   Contexto:
     Dado que estou no site https://www.vivo.com.br

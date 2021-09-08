@@ -1,10 +1,9 @@
 package pages;
 
-import net.bytebuddy.asm.Advice;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.touch.DownAction;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TelaDadosRestantes {

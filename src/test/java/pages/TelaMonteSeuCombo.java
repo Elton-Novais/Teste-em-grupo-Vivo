@@ -19,6 +19,7 @@ public class TelaMonteSeuCombo{
         Thread.sleep(1000);
         ((RemoteWebDriver) navegador).executeScript("scrollBy(0,1350)", "");
         navegador.findElement(By.xpath("//*[@id='btn-forward']")).click();
+        Thread.sleep(3000);
     }
 
 }
